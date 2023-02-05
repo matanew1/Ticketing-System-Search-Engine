@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <%- include("./header.ejs") %>
+  </head>
+  <body>   
+    <br><br>
+    <h1 style="text-align: center;">Ticket Search:</h1>
+    <br><br>
+      <form action="/tickets" method="post">
+        <table style="margin-left: auto; margin-right: auto;">
+        <tr>
+          <td colspan="2"><h3>Search By:</h3></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><label for="title"> title:</label></td>
+          <td><input type="text" id="title" name="title"/></td>
+        </tr>
+        <tr>
+          <td><label for="title"> content:</label></td>
+          <td><input type="text" id="title" name="content"/></td>
+        </tr>
+        <tr>
+          <td><label for="title"> email:</label></td>
+          <td><input type="text" id="title" name="email"/></td>
+        </tr>
+        <tr>
+          <td colspan="2"><h3>Search By Creation Time:</h3></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><label for="title"> From:</label></td>
+          <td><input type="text" id="title" name="from"/></td>
+        </tr>
+        <tr>
+          <td><label for="title"> To:</label></td>
+          <td><input type="text" id="title" name="to"/></td>
+        </tr>
+        <td></td>
+        <td>
+          <button>Search</button>
+          <input type="reset" value="Clear all">
+        </td>
+      </table>   
+    </form>
+    <%- include("./footer.ejs") %>
+  </body>
+</html>

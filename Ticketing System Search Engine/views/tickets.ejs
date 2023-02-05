@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <%- include("./header.ejs") %>
+    <title>Ticket Match</title>
+    <style>
+      th, td {
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ticket Matches:</h1>
+    <h2>Total results: <%= size %></h2><br>
+    <table style="width: 90%;">
+      <% if(results.length > 0) { %>
+        <% results.forEach(res => { %>
+          <tr>
+            <td>ID:</td><td><%= res.id %></td>
+          </tr>
+          <tr>
+            <td>TITLE:</td><td><%= res.title %></td>
+          </tr>
+          <tr>
+            <td>CONTENT:</td><td> <%= res.content %></td>
+          </tr>
+          <tr>
+            <td>EMAIL:</td><td> <%= res.userEmail %></td>
+          </tr>
+          <tr>
+            <td>CREATION TIME:</td><td> <%= res.creationTime %></td>
+          </tr>
+          <tr>
+            <td>LABELS:</td><td> <%= res.labels %></td>
+          </tr>
+          <td colspan="2"><hr style="border: 1px solid red;"></td>
+        <% }) %>
+      <% } else { %>
+            There is nothing to display...
+      <% } %>
+    </table>
+    <form action="/" method="post">
+      <button>Back To Search Page</button>
+    </form>
+  </body>
+</html>
